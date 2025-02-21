@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CartService } from './core/services/cart.service';
+import { Product } from './core/services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'e-commerce-platform';
+  cartItems: Product[] = [];
+
+  constructor(private cartService: CartService) {}
+
+  ngOnInit() {
+    this.cartService.getCartItems().subscribe(items => {
+      this.cartItems = items;
+    });
+  }
 }

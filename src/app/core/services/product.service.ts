@@ -22,7 +22,7 @@ export class ProductService {
 
   constructor() { }
 
-  getProducts(): Observable<Product[]> {
+  getProducts(productId: string): Observable<Product[]> {
     return of(this.products); // Simulating API response with mock data
   }
 }

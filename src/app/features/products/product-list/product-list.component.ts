@@ -16,7 +16,8 @@ export class ProductListComponent {
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.productService.getProducts().subscribe((data) => {
+    const productId = 'someProductId'; // Replace with actual productId
+    this.productService.getProducts(productId).subscribe((data) => {
       this.products = data;
       this.filteredProducts = data;
       this.categories = [...new Set(data.map((product) => product.category))]; // Get unique categories
