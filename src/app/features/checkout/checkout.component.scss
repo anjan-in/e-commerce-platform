@@ -1,0 +1,26 @@
+.checkout-page {
+  padding: 40px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-info {
+  flex-grow: 1;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
