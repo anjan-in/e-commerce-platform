@@ -29,4 +29,9 @@ export class CartService {
     this.cartItems = [];
     this.cartSubject.next(this.cartItems);
   }
+
+  getCartCount(): number {
+    // logic to get the cart count
+    return 0; // replace with actual logic
+  }
 }

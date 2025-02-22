@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderConfirmationComponent } from './features/order-confirmation/order-confirmation.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrderConfirmationComponent
+    OrderConfirmationComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,6 +19,7 @@ import { OrderConfirmationComponent } from './features/order-confirmation/order-
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

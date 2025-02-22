@@ -16,24 +16,42 @@ export class ProductListComponent {
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    const productId = 'someProductId'; // Replace with actual productId
-    this.productService.getProducts(productId).subscribe((data) => {
-      this.products = data;
-      this.filteredProducts = data;
-      this.categories = [...new Set(data.map((product) => product.category))]; // Get unique categories
+    // this.productService.getProducts('someProductId').subscribe((data) => {
+    //   this.products = data;
+    //   this.filteredProducts = data;
+    // });
+
+    this.loadProducts();
+  }
+
+  loadProducts() {
+    this.productService.getProducts('someProductId').subscribe({
+      next: (data) => {
+        this.products = data;
+        this.filteredProducts = data;
+        this.categories = [...new Set(data.map((p) => p.category))]; // Get unique categories
+      },
+      error: (err) => console.error('Error fetching products:', err)
     });
   }
 
   filterByCategory(category: string) {
-    this.selectedCategory = category;
-    this.applyFilters();
+    this.filteredProducts = category
+      ? this.products.filter(p => p.category === category && p.price <= this.maxPrice)
+      : this.products.filter(p => p.price <= this.maxPrice);
   }
 
-  applyFilters() {
-    this.filteredProducts = this.products.filter((product) =>
-      (this.selectedCategory ? product.category === this.selectedCategory : true) &&
-      product.price <= this.maxPrice
-    );
+  applyFilters(filters: any) {
+    this.filteredProducts = this.products.filter((product) => {
+      return (
+        (!filters.category || product.category === filters.category) &&
+        product.price <= filters.priceRange
+      );
+    });
+  }
+
+  addToCart(product: Product) {
+    console.log('Product added to cart:', product);
   }
 
 }

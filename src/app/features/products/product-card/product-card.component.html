@@ -12,10 +12,24 @@
 </div> -->
 
 <a [routerLink]="['/product', product.id]" class="product-card">
-    <!-- <img [src]="product.imageUrl || 'assets/img/placeholder.jpg'" alt="{{ product.name }}" class="product-img"> -->
+    <img [src]="product.imageUrl || 'assets/img/placeholder.jpg'" alt="{{ product.name }}" class="product-img">
     <img [src]="'https://picsum.photos/200/300'" alt="{{ product.name }}">
     <div class="product-info">
       <h5 class="product-name">{{ product.name }}</h5>
       <p class="product-price">${{ product.price }}</p>
     </div>
 </a>
+
+<!-- <div *ngFor="let product of filteredProducts" class="col-md-4 mb-4">
+    <div class="card">
+        <img [src]="product.imageUrl || 'assets/img/placeholder.jpg'" class="card-img-top">
+        <img [src]="'https://picsum.photos/200/300'" alt="{{ product.name }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">${{ product.price | currency }}</p>
+            <button class="btn btn-primary w-100" (click)="addToCart(product)">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div> -->

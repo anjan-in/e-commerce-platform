@@ -1,50 +1,57 @@
 <div class="container checkout-page">
-  <h2>Checkout</h2>
+  <h2 class="text-center mb-4">🛒 Checkout</h2>
 
-  <div *ngIf="cartItems.length === 0">
+  <div *ngIf="cartItems.length === 0" class="text-center">
     <p>Your cart is empty. <a routerLink="/">Go back to shop</a></p>
   </div>
 
-  <div *ngIf="cartItems.length > 0">
-    <h4>Order Summary</h4>
-    <div *ngFor="let product of cartItems" class="cart-item">
-      <img [src]="product.imageUrl || 'assets/img/placeholder.jpg'" class="cart-img">
-      <div class="cart-info">
-        <h5>{{ product.name }}</h5>
-        <p>${{ product.price }}</p>
+  <div *ngIf="cartItems.length > 0" class="checkout-container">
+    <!-- Order Summary -->
+    <div class="order-summary">
+      <h4>Order Summary</h4>
+      <div *ngFor="let product of cartItems" class="cart-item">
+        <img [src]="product.imageUrl || 'assets/img/placeholder.jpg'" class="cart-img">
+        <div class="cart-info">
+          <h5>{{ product.name }}</h5>
+          <p>${{ product.price }}</p>
+        </div>
       </div>
+      <h4 class="total">Total: ${{ totalAmount }}</h4>
     </div>
 
-    <h4>Total: ${{ totalAmount }}</h4>
+    <!-- Shipping Form -->
+    <div class="shipping-form">
+      <h4>Shipping Details</h4>
+      <form>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" [(ngModel)]="shippingDetails.name">
+        </div>
 
-    <h4>Shipping Details</h4>
-    <form>
-      <div class="form-group">
-        <label>Name</label>
-        <input type="text" class="form-control" [(ngModel)]="shippingDetails.name">
-      </div>
+        <div class="form-group">
+          <label>Address</label>
+          <input type="text" class="form-control" [(ngModel)]="shippingDetails.address">
+        </div>
 
-      <div class="form-group">
-        <label>Address</label>
-        <input type="text" class="form-control" [(ngModel)]="shippingDetails.address">
-      </div>
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" class="form-control" [(ngModel)]="shippingDetails.city">
+        </div>
 
-      <div class="form-group">
-        <label>City</label>
-        <input type="text" class="form-control" [(ngModel)]="shippingDetails.city">
-      </div>
+        <div class="form-group">
+          <label>Zip Code</label>
+          <input type="text" class="form-control" [(ngModel)]="shippingDetails.zip">
+        </div>
 
-      <div class="form-group">
-        <label>Zip Code</label>
-        <input type="text" class="form-control" [(ngModel)]="shippingDetails.zip">
-      </div>
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" class="form-control" [(ngModel)]="shippingDetails.country">
+        </div>
 
-      <div class="form-group">
-        <label>Country</label>
-        <input type="text" class="form-control" [(ngModel)]="shippingDetails.country">
-      </div>
-
-      <button type="button" class="btn btn-success mt-3" (click)="placeOrder()">Place Order</button>
-    </form>
+        <button type="button" class="btn btn-success btn-lg w-100 mt-3" (click)="placeOrder()">
+          Place Order
+        </button>
+      </form>
+    </div>
   </div>
 </div>
