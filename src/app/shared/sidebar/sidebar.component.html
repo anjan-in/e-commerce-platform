@@ -1,0 +1,21 @@
+<div class="sidebar">
+  <h4>Filters</h4>
+
+  <!-- Category Filter -->
+  <div class="filter-group">
+    <label>Category</label>
+    <select class="form-control" [(ngModel)]="selectedCategory" (change)="filterProducts()">
+      <option value="">All Categories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <!-- Price Range -->
+  <div class="filter-group">
+    <label>Price Range</label>
+    <input type="range" min="0" max="1000" [(ngModel)]="priceRange" (change)="filterProducts()">
+    <p>Up to ${{ priceRange }}</p>
+  </div>
+
+  <button class="btn btn-primary w-100 mt-3" (click)="resetFilters()">Reset Filters</button>
+</div>
