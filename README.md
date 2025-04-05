@@ -21,6 +21,16 @@ A scalable and responsive **E-Commerce Platform** built with **Angular**. This a
 
 ---
 
+Live project will be available at: [e-commerce-platform](https://anjan-in.github.io/e-commerce-platform/)
+
+
+## 🔥 What’s Improved?
+✔ **Better structure** – Organized sections for clarity.  
+✔ **Feature highlights** – Clearly outlines what the project offers.  
+✔ **Setup & Deployment** – Step-by-step instructions for running & deploying the app.  
+✔ **Contributing guidelines** – Encourages community participation.  
+✔ **License & Contact** – Adds professional touch.
+
 ## 📂 Project Setup
 
 ### 1️⃣ Clone the Repository
@@ -54,15 +64,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
----
-
-Live project will be available at: https://anjan-in.github.io/e-commerce-platform/
-
-
-### 🔥 What’s Improved?
-✔ **Better structure** – Organized sections for clarity.  
-✔ **Feature highlights** – Clearly outlines what the project offers.  
-✔ **Setup & Deployment** – Step-by-step instructions for running & deploying the app.  
-✔ **Contributing guidelines** – Encourages community participation.  
-✔ **License & Contact** – Adds professional touch.
